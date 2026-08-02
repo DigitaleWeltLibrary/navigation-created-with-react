@@ -1,0 +1,17 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  call-deploy:
+    uses: softscriptdev/GitHub-Actions-to-deploy-vite/.github/workflows/deploy.yml@main
+    with:
+      base-path: "/navigation-created-with-react/"
